@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+.login,.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+/*   background-image: url('https://bootstrapious.com/i/snippets/sn-page-split/bg.jpg'); */
+background-image: url("../img/Servicios_soldadura.jpg");
+  background-size: cover;
+  background-position: center center;
+}
