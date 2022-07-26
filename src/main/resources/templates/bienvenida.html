@@ -16,55 +16,71 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
+<link href="css/Bienvenida.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark flex-row">
 		<ul class="navbar-nav flex-row mr-lg-0 mx-5">
-			<li><b class="text-white">METAL MECANICA DUEÑAS</b></li>	
+			<li><b class="text-white">METAL MECANICA DUEÑAS</b></li>
 		</ul>
-		
-		
-		
-		
-		<ul class="nav justify-content-end navbar-dark bg-dark mx-5">
-			<li class="nav-item dropdown mx-3"><a class="nav-link dropdown-toggle"
-					data-bs-toggle="dropdown" href="#" role="button"
-					aria-expanded="false">Menú</a>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">Perfil</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="#">Salir</a></li>
-				</ul>
-			</li>		
+
+		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu">
+			<!-- 		  <li class="nav-item"> -->
+			<!-- 			    <a class="nav-link active" aria-current="page" href="#">Productos</a> -->
+			<!-- 		  </li> -->
+			<!-- 		  <li class="nav-item"> -->
+			<!-- 			    <a class="nav-link active" aria-current="page" href="#">Ventas</a> -->
+			<!-- 		  </li> -->
+			<!-- 		  <li class="nav-item"> -->
+			<!-- 			    <a class="nav-link active" aria-current="page" href="#">Trabajador</a> -->
+			<!-- 		  </li> -->
+			<!-- 		  <li class="nav-item"> -->
+			<!-- 			    <a class="nav-link active" aria-current="page" href="#">Clientes</a> -->
+			<!-- 		  </li> -->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Action</a></li>
+					<li><a class="dropdown-item" href="#">Another action</a></li>
+					<li><a class="dropdown-item" href="#">Something else here</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Action</a></li>
+					<li><a class="dropdown-item" href="#">Another action</a></li>
+					<li><a class="dropdown-item" href="#">Something else here</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Action</a></li>
+					<li><a class="dropdown-item" href="#">Another action</a></li>
+					<li><a class="dropdown-item" href="#">Something else here</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Action</a></li>
+					<li><a class="dropdown-item" href="#">Another action</a></li>
+					<li><a class="dropdown-item" href="#">Something else here</a></li>
+				</ul></li>
+			<li class="nav-item"><a class="nav-link active"
+				aria-current="page" href="principal">Salir</a></li>
 		</ul>
 	</nav>
 
-	
-
-
-	<nav class="navbar navbar-expand-md navbar-light">
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" id="nav-link-custom"
-					th:href="@{/bienvenida}">IDAT</a></li>
-				<li class="nav-item"><a class="nav-link"
-					th:href="@{/cliente/listarTodo}">Cliente</a></li>
-				<li class="nav-item"><a class="nav-link"
-					th:href="@{/trabajador/listarTodo}">Trabajador</a></li>
-				<li class="nav-item"><a class="nav-link"
-					th:href="@{/producto/listarTodo}">Producto</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Modulo4</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Modulo5</a></li>
-			</ul>
-
-		</div>
-	</nav>
-	<section id="seccion1">
-		<div></div>
-	</section>
-
-	<footer class="mt-auto fixed-bottom p-3">
-		<small>Copyright &copy; www.idat.edu.pe</small>
-	</footer>
 </body>
 </html>
