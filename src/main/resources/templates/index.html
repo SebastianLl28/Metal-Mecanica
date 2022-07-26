@@ -14,7 +14,7 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 <link href="css/index.css"rel="stylesheet" >
-<title>Insert title here</title>
+<title>Log in</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -24,7 +24,7 @@
 
 
 
-        <div class="col-md-6 bg-light">
+        <div class="col-md-6 login">
             <div class="login d-flex align-items-center py-5">
 
 
@@ -40,9 +40,9 @@
                                 <div class="form-group mb-3">
                                     <input id="password" name="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                                 </div>
-                                <div class="custom-control custom-checkbox mb-3">
-                                    
-                                </div>
+                                <div th:if="${param.error}" class="alert alert-danger text-center">    
+				                   Usuario o contraseña incorrecta.
+				                </div>
                                 <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm w-100">Ingresar</button>
                             </form>
                         </div>
