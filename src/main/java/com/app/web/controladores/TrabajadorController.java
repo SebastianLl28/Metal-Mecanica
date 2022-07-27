@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.app.web.modelo.Rol;
 import com.app.web.modelo.Trabajador;
+import com.app.web.servicios.RolServicio;
 import com.app.web.servicios.TrabajadorServicio;
 
 
@@ -22,20 +24,25 @@ public class TrabajadorController {
 	@Autowired
 	private TrabajadorServicio servicio;
 	
+	@Autowired
+	private RolServicio servicio_rol;
+	
 	
 	@RequestMapping("/listarTodo")
 	public String listarTrabajador(Model model) {
 		List<Trabajador> listaTrabjador= servicio.buscarTodo();
 		System.out.println("LISTA DE PELICULAS : " + listaTrabjador);
 		model.addAttribute("listaTrabajador", listaTrabjador);
-		return "/moduloTrabajador/listarTodo";
+		return "/moduloTrabajador/nuevoTrabajador";
 	}
 	
 	@RequestMapping("/nuevo")
 	public String nuevaPelicula(Model model) {
 		Trabajador trabajador = new Trabajador();
+		List<Rol> listaRol = servicio_rol.buscarTodos();
 		model.addAttribute("trabajador", trabajador);
-		return "/moduloTrabajador/nuevaTrabajador";
+		model.addAttribute("rol", listaRol);
+		return "/moduloTrabajador/nuevoTrabajador";
 	}
 	
 	@RequestMapping(value = "/guardar" , method = RequestMethod.POST)

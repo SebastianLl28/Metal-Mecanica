@@ -13,24 +13,50 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="../bienvenida">Metal Mecanica Dueñas</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="../cliente/listarTodo">Clientes</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Productos</a></li>
-				</ul>
-			</div>
-		</div>
+	<nav class="navbar navbar-dark bg-dark flex-row">
+		<ul class="navbar-nav flex-row mr-lg-0 mx-5">
+			<li><b class="text-white">METAL MECANICA DUEÑAS</b></li>
+		</ul>
+		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+						<li><a class="dropdown-item" href="../producto/listarTodo">Listar Todo</a></li>
+					<li><a class="dropdown-item" href="../producto/nuevo">Agregar Productos</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle disabled" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
+					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="../trabajador/listarTodo">Lista trabajadores</a></li>
+					<li><a class="dropdown-item" href="../trabajador/nuevo">Agregar Trabajador</a></li>
+				</ul></li>
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="../cliente/listarTodo">Listar Todo</a></li>
+					<li><a class="dropdown-item" href="../cliente/nuevo">Agregar Cliente</a></li>
+				</ul></li>
+			<li class="nav-item"><a class="nav-link active"
+				aria-current="page" href="principal">Salir</a></li>
+		</ul>
 	</nav>
 
 	<div align="center">
@@ -59,9 +85,8 @@
 							<td th:text="${producto.stock}">Dni</td>
 							<td th:text="${producto.categoria.descripcion}">Telefono</td>
 							<td th:text="${producto.precio}">Direccion</td>
-
 							<td><a th:href="@{/producto/actualizar/{id}(id=${producto.idProducto})}">Actualizar</a>
-								&nbsp;&nbsp;&nbsp; <a class = "nav-link disabled"
+								&nbsp;&nbsp;&nbsp; <a class = "nav-link"
 								th:href="@{/producto/eliminar/{id}(id=${producto.idProducto})}">Eliminar</a></td>
 						</tr>
 					</tbody>

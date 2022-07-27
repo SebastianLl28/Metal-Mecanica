@@ -21,9 +21,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login","/rest/**")
+		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login", "/moduloProducto/**","/rest/**")
 		.permitAll()
+		
+		.antMatchers("/listarProducto").hasAnyRole("ADMIN")
 		.antMatchers("/cliente/listarTodo").hasAnyRole("ADMIN","LECTOR","CREADOR","EDITOR","DEPURADOR")
+		.antMatchers("/moduloCliente/listarTodo").hasAnyRole("ADMIN","LECTOR","CREADOR","EDITOR","DEPURADOR")
 		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN","CREADOR")
 		.antMatchers("/cliente/guardar").hasAnyRole("ADMIN","CREADOR","EDITOR")
 		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN","EDITOR")
@@ -44,7 +47,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.permitAll();
 	}
 	
-
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
