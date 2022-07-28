@@ -15,7 +15,7 @@
 
 	<nav class="navbar navbar-dark bg-dark flex-row">
 		<ul class="navbar-nav flex-row mr-lg-0 mx-5">
-			<li><b class="text-white">METAL MECANICA DUEÑAS</b></li>
+			<li><a th:href="@{../bienvenida}" class="navbar-brand" ><b>METAL MECANICA DUEÑAS</b></a></li>
 		</ul>
 		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu">
 			<li class="nav-item dropdown"><a
@@ -55,7 +55,7 @@
 					<li><a class="dropdown-item" href="../cliente/nuevo">Agregar Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
-				aria-current="page" th:href="@{/login}">Salir</a></li>
+				aria-current="page" th:href="@{../login}">Salir</a></li>
 		</ul>
 	</nav>
 

@@ -23,7 +23,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login","/rest/**")
 		.permitAll()
-		
 		.antMatchers("/producto/listarTodo").hasAnyRole("ADMIN")
 		.antMatchers("/producto/nuevo").hasAnyRole("ADMIN")
 		.antMatchers("/producto/actualizar/**").hasAnyRole("ADMIN")
@@ -36,33 +35,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN")
 		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN")
 		.antMatchers("/cliente/eliminar/**").hasAnyRole("ADMIN")
-		
-//		.antMatchers("/trabajador/listarTodo").hasAnyRole("ADMIN")
-//		.antMatchers("/trabajador/nuevo").hasAnyRole("ADMIN")
-//		
-//		
-//		.antMatchers("/cliente/listarTodo").hasAnyRole("ADMIN","LECTOR","CREADOR","EDITOR","DEPURADOR")
-//		.antMatchers("/moduloCliente/listarTodo").hasAnyRole("ADMIN","LECTOR","CREADOR","EDITOR","DEPURADOR")
-//		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN","CREADOR")
-//		.antMatchers("/cliente/guardar").hasAnyRole("ADMIN","CREADOR","EDITOR")
-//		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN","EDITOR")
-//		.antMatchers("/cliente/eliminar/**").hasAnyRole("ADMIN","DEPURADOR")
-//		
-//		.antMatchers("/producto/nuevo").hasAnyRole("ADMIN","CREADOR")
-//		.antMatchers("/producto/guardar").hasAnyRole("ADMIN","CREADOR","EDITOR")
-//		.antMatchers("/producto/actualizar/**").hasAnyRole("ADMIN","EDITOR")
-//		.antMatchers("/producto/eliminar/**").hasAnyRole("ADMIN","DEPURADOR")
-//		
-//		.antMatchers("/trabajador/nuevo").hasAnyRole("ADMIN","CREADOR")
-//		.antMatchers("/trabajador/guardar").hasAnyRole("ADMIN","CREADOR","EDITOR")
-//		.antMatchers("/trabajador/actualizar/**").hasAnyRole("ADMIN","EDITOR")
-//		.antMatchers("/trabajador/eliminar/**").hasAnyRole("ADMIN","DEPURADOR")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/bienvenida", true).permitAll()
 		.and().logout()
 		.permitAll();
 	}
-	
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 

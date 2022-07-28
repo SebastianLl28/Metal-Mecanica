@@ -14,7 +14,7 @@
 <body>
 	<nav class="navbar navbar-dark bg-dark flex-row">
 		<ul class="navbar-nav flex-row mr-lg-0 mx-5">
-			<li><b class="text-white">METAL MECANICA DUEÑAS</b></li>
+			<li><a th:href="@{../bienvenida}" class="navbar-brand" ><b>METAL MECANICA DUEÑAS</b></a></li>
 		</ul>
 		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu">
 			<li class="nav-item dropdown"><a
@@ -23,10 +23,12 @@
 				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-						<li><a class="dropdown-item" href="../producto/listarTodo">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="../producto/nuevo">Agregar Productos</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../producto/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../producto/nuevo}">Agregar
+							Productos</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle disabled" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
@@ -35,32 +37,35 @@
 					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
 					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="trabajador/listarTodo">Lista trabajadores</a></li>
-					<li><a class="dropdown-item" href="trabajador/nuevo">Agregar Trabajador</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../trabajador/listarTodo}">Lista trabajadores</a></li>
+					<li><a class="dropdown-item" th:href="@{../trabajador/nuevo}">Agregar
+							Trabajador</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="../cliente/listarTodo">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="../cliente/nuevo">Agregar Cliente</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../cliente/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../cliente/nuevo}">Agregar
+							Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="principal">Salir</a></li>
+				aria-current="page" th:href="@{../login}">Salir</a></li>
 		</ul>
 	</nav>
 	<div align="center">
 		<h1>Trabajadores</h1>
-		<a th:href="@{/trabajador/nuevo}">Crear Nuevo Trabajador</a> <br />
-		 <br />
+		<a th:href="@{/trabajador/nuevo}">Crear Nuevo Trabajador</a> <br /> <br />
 		<div class="container">
 			<div class="col-3"></div>
 			<div class="col-sm-9">
@@ -74,7 +79,7 @@
 							<th>Dni</th>
 							<th>Direccion</th>
 							<th>Correo</th>
-							<th>Passaword</th>							
+							<th>Passaword</th>
 							<th>Accion</th>
 						</tr>
 					</thead>
@@ -87,8 +92,9 @@
 							<td th:text="${trabajador.direccion}">Direccion</td>
 							<td th:text="${trabajador.correo}">Correo</td>
 							<td th:text="${trabajador.passaword}">Contrasenia</td>
-							<td><a th:href="@{/trabajador/actualizar/{id}(id=${trabajador.idTrabajador})}">Actualizar</a>
-								&nbsp;&nbsp;&nbsp; <a class = ""
+							<td><a
+								th:href="@{/trabajador/actualizar/{id}(id=${trabajador.idTrabajador})}">Actualizar</a>
+								&nbsp;&nbsp;&nbsp; <a class=""
 								th:href="@{/trabajador/eliminar/{id}(id=${trabajador.idTrabajador})}">Eliminar</a></td>
 						</tr>
 					</tbody>
