@@ -20,13 +20,13 @@ import com.app.web.servicios.ClienteServicio;
 
 
 @Controller
-@RequestMapping("cliente")
+@RequestMapping("/cliente")
 public class ClienteController {
 	
 	@Autowired
 	private ClienteServicio servicio;
 	
-	@RequestMapping("listarTodo")
+	@RequestMapping("/listarTodo")
 	public String listarCliente(Model model) {
 		List<Cliente> listarCliente = servicio.buscarTodo();
 		System.out.println("Listar de Cliente: " + listarCliente);

@@ -33,7 +33,7 @@ public class TrabajadorController {
 		List<Trabajador> listaTrabjador= servicio.buscarTodo();
 		System.out.println("LISTA DE PELICULAS : " + listaTrabjador);
 		model.addAttribute("listaTrabajador", listaTrabjador);
-		return "/moduloTrabajador/nuevoTrabajador";
+		return "/moduloTrabajador/listarTodo";
 	}
 	
 	@RequestMapping("/nuevo")
@@ -56,7 +56,9 @@ public class TrabajadorController {
 	public ModelAndView editarTrabajador(@PathVariable(name = "id") int id) {
 	    ModelAndView mav = new ModelAndView("/moduloTrabajador/editarTrabajador");
 	    Trabajador trabajador = servicio.buscarPorId(id);
+	    List<Rol> listaRol = servicio_rol.buscarTodos();
 	    mav.addObject("trabajador", trabajador);
+	    mav.addObject("rol", listaRol);
 	    return mav;
 	}
 	

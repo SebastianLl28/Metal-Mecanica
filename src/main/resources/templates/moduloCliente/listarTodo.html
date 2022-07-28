@@ -55,7 +55,7 @@
 					<li><a class="dropdown-item" href="../cliente/nuevo">Agregar Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="principal">Salir</a></li>
+				aria-current="page" th:href="@{/login}">Salir</a></li>
 		</ul>
 	</nav>
 
@@ -89,7 +89,7 @@
 							<td th:text="${cliente.correo}">Correo</td>
 
 							<td><a th:href="@{/cliente/actualizar/{id}(id=${cliente.idCliente})}">Actualizar</a>
-								&nbsp;&nbsp;&nbsp; <a class = "nav-link disabled"
+								&nbsp;&nbsp;&nbsp; <a class = "nav-link"
 								th:href="@{/cliente/eliminar/{id}(id=${cliente.idCliente})}">Eliminar</a></td>
 						</tr>
 					</tbody>

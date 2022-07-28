@@ -48,7 +48,6 @@ public class Rol implements Serializable{
     
     
     public Rol() {
-    	
     }
     
     public Rol(Integer idRol) {
