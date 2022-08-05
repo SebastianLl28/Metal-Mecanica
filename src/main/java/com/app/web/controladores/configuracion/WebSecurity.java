@@ -21,20 +21,20 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login","/rest/**")
+		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login","/rest/**","/registro")
 		.permitAll()
-		.antMatchers("/producto/listarTodo").hasAnyRole("ADMIN")
-		.antMatchers("/producto/nuevo").hasAnyRole("ADMIN")
-		.antMatchers("/producto/actualizar/**").hasAnyRole("ADMIN")
-		.antMatchers("/producto/eliminar/**").hasAnyRole("ADMIN")
-		.antMatchers("/trabajador/listarTodo").hasAnyRole("ADMIN")
+		.antMatchers("/producto/listarTodo").hasAnyRole("ADMIN", "ALMACEN", "VENDEDOR")
+		.antMatchers("/producto/nuevo").hasAnyRole("ADMIN", "ALMACEN")
+		.antMatchers("/producto/actualizar/**").hasAnyRole("ADMIN", "ALMACEN")
+		.antMatchers("/producto/eliminar/**").hasAnyRole("ADMIN", "ALMACEN")
+		.antMatchers("/trabajador/listarTodo").hasAnyRole("ADMIN", "ALMACEN")
 		.antMatchers("/trabajador/nuevo").hasAnyRole("ADMIN")
 		.antMatchers("/trabajador/actualizar/**").hasAnyRole("ADMIN")
 		.antMatchers("/trabajador/eliminar/**").hasAnyRole("ADMIN")
-		.antMatchers("/cliente/listarTodo").hasAnyRole("ADMIN")
-		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN")
-		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN")
-		.antMatchers("/cliente/eliminar/**").hasAnyRole("ADMIN")
+		.antMatchers("/cliente/listarTodo").hasAnyRole("ADMIN", "VENDEDOR")
+		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN", "VENDEDOR")
+		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN", "VENDEDOR")
+		.antMatchers("/cliente/eliminar/**").hasAnyRole("ADMIN", "VENDEDOR")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/bienvenida", true).permitAll()
 		.and().logout()
@@ -46,9 +46,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("admin")).roles("ADMIN").and()
-		.withUser("jorge").password(encoder.encode("jorge")).roles("LECTOR").and()
-		.withUser("maria").password(encoder.encode("maria")).roles("CREADOR").and()
-		.withUser("elena").password(encoder.encode("elena")).roles("LECTOR","DEPURADOR").and()
+		.withUser("cliente").password(encoder.encode("cliente")).roles("CLIENTE").and()
+		.withUser("vendedor").password(encoder.encode("vendedor")).roles("VENDEDOR").and()
+		.withUser("almacen").password(encoder.encode("almacen")).roles("ALMACEN").and()
 		.withUser("ernesto").password(encoder.encode("ernesto")).roles("EDITOR","LECTOR").and();
 	}
 	

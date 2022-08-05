@@ -69,7 +69,7 @@
 				<table border="1" cellpadding="10"
 					class="table table-striped table-hover table-bordered">
 					<thead>
-						<tr class="table-dark">
+						<tr class="table-dark text-center">
 							<th>Id</th>
 							<th>nombre</th>
 							<th>Stock</th>
@@ -81,12 +81,12 @@
 					<tbody>
 						<tr th:each="producto : ${listaProductos}">
 							<td th:text="${producto.idProducto}">Id</td>
-							<td th:text="${producto.nombre}">Nombre</td>
-							<td th:text="${producto.stock}">Dni</td>
-							<td th:text="${producto.categoria.descripcion}">Telefono</td>
-							<td th:text="${producto.precio}">Direccion</td>
-							<td><a th:href="@{/producto/actualizar/{id}(id=${producto.idProducto})}">Actualizar</a>
-								&nbsp;&nbsp;&nbsp; <a class = "nav-link"
+							<td th:text="${producto.nombre}">nombre</td>
+							<td  class="text-center" th:text="${producto.stock}">stock</td>
+							<td th:text="${producto.categoria.descripcion}">Categoria</td>
+							<td class="text-center" th:text="${producto.precio}">Precio</td>
+							<td class="text-center"><a th:href="@{/producto/actualizar/{id}(id=${producto.idProducto})}">Actualizar</a>
+								 <a class = "text-danger ms-4"
 								th:href="@{/producto/eliminar/{id}(id=${producto.idProducto})}">Eliminar</a></td>
 						</tr>
 					</tbody>

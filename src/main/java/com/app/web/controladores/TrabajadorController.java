@@ -2,9 +2,12 @@ package com.app.web.controladores;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,9 +49,20 @@ public class TrabajadorController {
 	}
 	
 	@RequestMapping(value = "/guardar" , method = RequestMethod.POST)
-	public String crearTrabajador(@ModelAttribute("trabjador") Trabajador trabajador) {
-		    servicio.crear(trabajador);
-		    return "redirect:/trabajador/listarTodo";
+	public String crearTrabajador(@Valid @ModelAttribute("trabajador") Trabajador trabajador, BindingResult result, Model model) {
+		
+		if(result.hasErrors()) {
+			
+			List<Rol> listaRol = servicio_rol.buscarTodos();
+			model.addAttribute("trabajador", trabajador);
+			model.addAttribute("rol", listaRol);
+			System.out.println("Error");
+			return "/moduloTrabajador/nuevoTrabajador";
+		}
+		
+		
+		servicio.crear(trabajador);
+		return "redirect:/trabajador/listarTodo";
 	}
 	
 	

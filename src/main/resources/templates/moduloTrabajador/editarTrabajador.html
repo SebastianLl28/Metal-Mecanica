@@ -63,34 +63,34 @@
 
 			<table border="0" cellpadding="10">
 				<tr>
-					<td>ID Producto:</td>
+					<td>Id:(*)</td>
 					<td><input type="text" th:field="*{idTrabajador}"
 						readonly="readonly" /></td>
 				</tr>
 				<tr>
-					<td>Nombre:</td>
+					<td>Nombre:(*)</td>
 					<td><input type="text" th:field="*{nombre}" class="form-control"/></td>
 				</tr>
 				<tr>
-					<td>Categoria:</td>
+					<td>Rol:(*)</td>
 					<td><select th:field="*{rol}" class="form-select">
 							<option th:each="rol:${rol}" th:value="${rol.idRol}" th:text="${rol.nombre}" >
 					</select></td>
 				</tr>
 				<tr>
-					<td>Dni:</td>
+					<td>Dni:(*)</td>
 					<td><input type="text" th:field="*{dni}" class="form-control"/></td>
 				</tr>
 				<tr>
-					<td>Dirección:</td>
+					<td>Dirección:(*)</td>
 					<td><input type="text" th:field="*{direccion}" class="form-control"/></td>
 				</tr>
 				<tr>
-					<td>Correo:</td>
+					<td>Correo:(*)</td>
 					<td><input type="text" th:field="*{correo}" class="form-control"/></td>
 				</tr>
 				<tr>
-					<td>Contraseña:</td>
+					<td>Contraseña:(*)</td>
 					<td><input type="text" th:field="*{passaword}" class="form-control"/></td>
 				</tr>
 				<tr>

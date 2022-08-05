@@ -15,6 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -38,27 +43,32 @@ public class Trabajador implements Serializable{
     @Column(name = "idTrabajador")
     private Integer idTrabajador;
 	
+	@NotEmpty
 	@Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
 	
+	@NotEmpty
+	@Pattern(regexp="[0-9]{8}")
 	@Basic(optional = false)
     @Column(name = "dni")
     private String dni;
 	
+	@Email
+	@NotEmpty
 	@Basic(optional = false)
     @Column(name = "correo")
     private String correo;
 	
-	
+	@NotEmpty
 	@Basic(optional = false)
     @Column(name = "direccion")
     private String direccion;
 	
+	@NotEmpty
 	@Basic(optional = false)
     @Column(name = "passaword")
     private String passaword;
-	
 	
 	
 	@JoinColumn(name = "rol", referencedColumnName = "idRol")
