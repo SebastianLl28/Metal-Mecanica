@@ -9,6 +9,9 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+
+<link href="../css/exportar.css" rel="stylesheet" type="text/css" />
+
 <title>Listar Clientes</title>
 </head>
 <body>
@@ -45,6 +48,17 @@
 					<li><a class="dropdown-item" href="../trabajador/listarTodo">Lista trabajadores</a></li>
 					<li><a class="dropdown-item" href="../trabajador/nuevo">Agregar Trabajador</a></li>
 				</ul></li>
+				
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false"> Proveedor </a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="../proveedor/listarTodo">Lista Proveedor</a></li>
+					<li><a class="dropdown-item" href="../proveedor/nuevo">Agregar Proveedor</a></li>
+				</ul></li>
+				
 				<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
@@ -65,7 +79,13 @@
 		 <br />
 		<div class="container">
 			<div class="col-3"></div>
-			<div class="col-sm-9">
+			<div class="col-sm-9 w-100">
+			
+			<span class="float-start mb-3">Exportar: 
+			<a class="nav-link d-inline" href="/metalmecanica/cliente/listarTodo?format=pdf" target="_blank"><div class="pdf"></div></a>
+			</span>
+			
+			
 				<table border="1" cellpadding="10"
 					class="table table-striped table-hover table-bordered ">
 					<thead>
@@ -89,7 +109,7 @@
 							<td th:text="${cliente.correo}">Correo</td>
 
 							<td><a th:href="@{/cliente/actualizar/{id}(id=${cliente.idCliente})}">Actualizar</a>
-								&nbsp;&nbsp;&nbsp; <a class = "nav-link"
+								<a class = "text-danger"
 								th:href="@{/cliente/eliminar/{id}(id=${cliente.idCliente})}">Eliminar</a></td>
 						</tr>
 					</tbody>

@@ -22,7 +22,8 @@
 <body>
 	<nav class="navbar navbar-dark bg-dark flex-row">
 		<ul class="navbar-nav flex-row mr-lg-0 mx-5">
-			<li><a th:href="@{bienvenida}" class="title navbar-brand"><b>METAL MECANICA DUEÑAS</b></a></li>
+			<li><a th:href="@{bienvenida}" class="title navbar-brand"><b>METAL
+						MECANICA DUEÑAS</b></a></li>
 		</ul>
 		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu">
 			<li class="nav-item dropdown"><a
@@ -31,10 +32,12 @@
 				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-						<li><a class="dropdown-item" th:href="@{producto/listarTodo}">Listar Todo</a></li>
-					<li><a class="dropdown-item" th:href="@{producto/nuevo}">Agregar Productos</a></li>
+					<li><a class="dropdown-item" th:href="@{producto/listarTodo}">Listar
+							Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{producto/nuevo}">Agregar
+							Productos</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle disabled" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
@@ -43,23 +46,38 @@
 					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
 					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" th:href="@{trabajador/listarTodo}">Lista trabajadores</a></li>
-					<li><a class="dropdown-item" th:href="@{trabajador/nuevo}">Agregar Trabajador</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{trabajador/listarTodo}">Lista trabajadores</a></li>
+					<li><a class="dropdown-item" th:href="@{trabajador/nuevo}">Agregar
+							Trabajador</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
+				id="navbarDarkDropdownMenuLink" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+				<ul class="dropdown-menu dropdown-menu-dark"
+					aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item"
+						th:href="@{proveedor/listarTodo}">Lista de Proveedores</a></li>
+					<li><a class="dropdown-item" th:href="@{proveedor/nuevo}">Agregar
+							Proveedor</a></li>
+				</ul></li>
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="cliente/listarTodo">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="cliente/nuevo">Agregar Cliente</a></li>
+					<li><a class="dropdown-item" href="cliente/listarTodo">Listar
+							Todo</a></li>
+					<li><a class="dropdown-item" href="cliente/nuevo">Agregar
+							Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="principal">Salir</a></li>
@@ -67,315 +85,343 @@
 	</nav>
 
 
-	
+
 	<main>
-    <div class="row g-5 w-100">
-        <div class="col-md-4 cont-categoria">
-            <div class="position-sticky">
-                <h2>Categoria:</h2>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingMangueras">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#Mangueras" aria-expanded="false" aria-controls="Mangueras">
-                                Mangueras
-                            </button>
-                        </h2>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Alternador</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Collarin</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Compresora</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Embrague</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Engrasadora</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Timón hidraulico</button>
-                            </div>
-                        </div>
-                        <div id="Mangueras" class="accordion-collapse collapse" aria-labelledby="headingMangueras"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Aire</button>
-                            </div>
-                        </div>
+		<div class="row g-5 w-100">
+			<div class="col-md-4 cont-categoria">
+				<div class="position-sticky">
+					<h2>Categoria:</h2>
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingMangueras">
+								<button class="accordion-button" type="button"
+									data-bs-toggle="collapse" data-bs-target="#Mangueras"
+									aria-expanded="false" aria-controls="Mangueras">
+									Mangueras</button>
+							</h2>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Alternador</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Collarin</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Compresora</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Embrague</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Engrasadora</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Timón
+										hidraulico</button>
+								</div>
+							</div>
+							<div id="Mangueras" class="accordion-collapse collapse"
+								aria-labelledby="headingMangueras"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Aire</button>
+								</div>
+							</div>
 
 
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingGasera">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#Gasera" aria-expanded="false" aria-controls="Gasera">
-                                Gasera
-                            </button>
-                        </h2>
-                        <div id="Gasera" class="accordion-collapse collapse" aria-labelledby="headingGasera"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">GR 3000</button>
-                            </div>
-                        </div>
-                        <div id="Gasera" class="accordion-collapse collapse" aria-labelledby="headingGasera"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">GR 4000</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTapones">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#Tapones" aria-expanded="false" aria-controls="Tapones">
-                                Tapones
-                            </button>
-                        </h2>
-                        <div id="Tapones" class="accordion-collapse collapse" aria-labelledby="headingTapones"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Bronce</button>
-                            </div>
-                        </div>
-                        <div id="Tapones" class="accordion-collapse collapse" aria-labelledby="headingTapones"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Aluminio</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingArandelas">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#Arandelas" aria-expanded="false" aria-controls="Arandelas">
-                                Arandelas
-                            </button>
-                        </h2>
-                        <div id="Arandelas" class="accordion-collapse collapse" aria-labelledby="headingArandelas"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Aluminio</button>
-                            </div>
-                        </div>
-                        <div id="Arandelas" class="accordion-collapse collapse" aria-labelledby="headingArandelas"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Cobre</button>
-                            </div>
-                        </div>
-                        <div id="Arandelas" class="accordion-collapse collapse" aria-labelledby="headingArandelas"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Bronce</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingPernos">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#Peronos" aria-expanded="false" aria-controls="Peronos">
-                                Pernos
-                            </button>
-                        </h2>
-                        <div id="Peronos" class="accordion-collapse collapse" aria-labelledby="headingPernos"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Caliper</button>
-                            </div>
-                        </div>
-                        <div id="Peronos" class="accordion-collapse collapse" aria-labelledby="headingPernos"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Racor</button>
-                            </div>
-                        </div>
-                        <div id="Peronos" class="accordion-collapse collapse" aria-labelledby="headingPernos"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body contenido-acordion">
-                                <button class="btn btn-primary w-100 btn-all" type="button">Regulador</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  -->
-                </div>
-            </div>
-        </div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingGasera">
+								<button class="accordion-button collapsed" type="button"
+									data-bs-toggle="collapse" data-bs-target="#Gasera"
+									aria-expanded="false" aria-controls="Gasera">Gasera</button>
+							</h2>
+							<div id="Gasera" class="accordion-collapse collapse"
+								aria-labelledby="headingGasera"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">GR
+										3000</button>
+								</div>
+							</div>
+							<div id="Gasera" class="accordion-collapse collapse"
+								aria-labelledby="headingGasera"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">GR
+										4000</button>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTapones">
+								<button class="accordion-button collapsed" type="button"
+									data-bs-toggle="collapse" data-bs-target="#Tapones"
+									aria-expanded="false" aria-controls="Tapones">Tapones
+								</button>
+							</h2>
+							<div id="Tapones" class="accordion-collapse collapse"
+								aria-labelledby="headingTapones"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Bronce</button>
+								</div>
+							</div>
+							<div id="Tapones" class="accordion-collapse collapse"
+								aria-labelledby="headingTapones"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Aluminio</button>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingArandelas">
+								<button class="accordion-button collapsed" type="button"
+									data-bs-toggle="collapse" data-bs-target="#Arandelas"
+									aria-expanded="false" aria-controls="Arandelas">
+									Arandelas</button>
+							</h2>
+							<div id="Arandelas" class="accordion-collapse collapse"
+								aria-labelledby="headingArandelas"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Aluminio</button>
+								</div>
+							</div>
+							<div id="Arandelas" class="accordion-collapse collapse"
+								aria-labelledby="headingArandelas"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Cobre</button>
+								</div>
+							</div>
+							<div id="Arandelas" class="accordion-collapse collapse"
+								aria-labelledby="headingArandelas"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Bronce</button>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingPernos">
+								<button class="accordion-button collapsed" type="button"
+									data-bs-toggle="collapse" data-bs-target="#Peronos"
+									aria-expanded="false" aria-controls="Peronos">Pernos</button>
+							</h2>
+							<div id="Peronos" class="accordion-collapse collapse"
+								aria-labelledby="headingPernos"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Caliper</button>
+								</div>
+							</div>
+							<div id="Peronos" class="accordion-collapse collapse"
+								aria-labelledby="headingPernos"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Racor</button>
+								</div>
+							</div>
+							<div id="Peronos" class="accordion-collapse collapse"
+								aria-labelledby="headingPernos"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body contenido-acordion">
+									<button class="btn btn-primary w-100 btn-all" type="button">Regulador</button>
+								</div>
+							</div>
+						</div>
+						<!--  -->
+					</div>
+				</div>
+			</div>
 
-        <!--  -->
+			<!--  -->
 
-        <div class="col-md-8">
+			<div class="col-md-8">
 
-            <div class="input-group w-50">
-                <span class="input-group-text" id="basic-addon1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
+				<div class="input-group w-50">
+					<span class="input-group-text" id="basic-addon1"> <svg
+							xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+							fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
                         </path>
                     </svg>
-                </span>
-                <input type="text" class="form-control" placeholder="Buscardor"
-                    aria-label="Input group example" aria-describedby="basic-addon1">
-            </div>
+					</span> <input type="text" class="form-control" placeholder="Buscardor"
+						aria-label="Input group example" aria-describedby="basic-addon1">
+				</div>
 
-            <div class="containe">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_asia.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_uno.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_dos.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_tres.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_cuatro.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-<!--                             <img src="img/Producto_manguera_asia.jpg" class="card-img-top"> -->
-                            <img src="img/Producto_manguera_nueve.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_seis.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_siete.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center carta">
-                            <img src="img/Producto_manguera_ocho.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Manguera</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Laboriosam nostrum eius quam.</p>
-                                <a href="#">Ver mas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </main>
+				<div class="containe">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_asia.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_uno.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_dos.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_tres.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_cuatro.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<!--                             <img src="img/Producto_manguera_asia.jpg" class="card-img-top"> -->
+								<img src="img/Producto_manguera_nueve.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_seis.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_siete.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card text-center carta">
+								<img src="img/Producto_manguera_ocho.jpg" class="card-img-top">
+								<div class="card-body">
+									<h5 class="card-title">Manguera</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet
+										consectetur, adipisicing elit. Laboriosam nostrum eius quam.</p>
+									<a href="#">Ver mas</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-    <footer style="color: white;" class="w-100 foot bg-dark mt-5">
-        <h2 style="margin-left: 3%;">Nos encuentras en:</h2>
-        <div class="container-fluid">
-            <div class="row align-items-center text-center">
-              <div class="col fs-5 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                  </svg><i class="bi bi-facebook"> Metal Mecanica Dueñas</i>
-              </div>
-              <div class="col fs-5 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
-                    <i class="bi bi-envelope"> llamucasebas@gmail.com</i>       
-              </div>
-              <div class="col fs-5 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+	<footer style="color: white;" class="w-100 foot bg-dark mt-5">
+		<h2 style="margin-left: 3%;">Nos encuentras en:</h2>
+		<div class="container-fluid">
+			<div class="row align-items-center text-center">
+				<div class="col fs-5 mb-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42"
+						fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+							d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                   </svg>
-                  <i class="bi bi-telephone"> 941 378 406</i>
-              </div>
-              <div class="col fs-5 mb-3">
-                <i class="bi bi-geo-alt-fill"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                  </svg> Coracora 2337, Cercado de Lima 15408</i>  
-              </div>
-            </div>
-          </div>
-    </footer>
-	
+					<i class="bi bi-facebook"> Metal Mecanica Dueñas</i>
+				</div>
+				<div class="col fs-5 mb-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42"
+						fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path
+							d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" /></svg>
+					<i class="bi bi-envelope"> llamucasebas@gmail.com</i>
+				</div>
+				<div class="col fs-5 mb-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42"
+						fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path
+							d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                  </svg>
+					<i class="bi bi-telephone"> 941 378 406</i>
+				</div>
+				<div class="col fs-5 mb-3">
+					<i class="bi bi-geo-alt-fill"><svg
+							xmlns="http://www.w3.org/2000/svg" width="42" height="42"
+							fill="currentColor" class="bi bi-geo-alt-fill"
+							viewBox="0 0 16 16">
+                    <path
+								d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                  </svg> Coracora 2337, Cercado de Lima 15408</i>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 </body>
 </html>

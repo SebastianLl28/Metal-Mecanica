@@ -18,7 +18,6 @@ import com.app.web.modelo.Cliente;
 import com.app.web.servicios.ClienteServicio;
 
 
-
 @Controller
 @RequestMapping("/cliente")
 public class ClienteController {
