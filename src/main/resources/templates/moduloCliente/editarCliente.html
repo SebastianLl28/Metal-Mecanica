@@ -24,61 +24,56 @@
 				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item"
-						th:href="@{../../producto/listarTodo}">Listar Todo</a></li>
-					<li><a class="dropdown-item" th:href="@{../../producto/nuevo}">Agregar
-							Productos</a></li>
+						<li><a class="dropdown-item" th:href="@{../../producto/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../../producto/nuevo}">Agregar Productos</a></li>
 				</ul></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle disabled" href="#"
+				
+				<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
+				data-bs-toggle="dropdown" aria-expanded="false"> Reclamos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../../reclamo/listarTodo}">Lista Reclamos</a></li>
+					<li><a class="dropdown-item" th:href="@{../../reclamo/nuevo}">Agregar
+							Reclamos</a></li>
 				</ul></li>
-			<li class="nav-item dropdown"><a
+				
+				
+				<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item"
-						th:href="@{../../trabajador/listarTodo}">Lista trabajadores</a></li>
-					<li><a class="dropdown-item" th:href="@{../../trabajador/nuevo}">Agregar
-							Trabajador</a></li>
+					<li><a class="dropdown-item" th:href="@{../../trabajador/listarTodo}">Lista trabajadores</a></li>
+					<li><a class="dropdown-item" th:href="@{../../trabajador/nuevo}">Agregar Trabajador</a></li>
 				</ul></li>
 				
-				
-			<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false"> Proveedor </a>
+				data-bs-toggle="dropdown" aria-expanded="false"> Proveedor</a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item"
-						th:href="@{../../proveedor/listarTodo}">Lista Proveedor</a></li>
-					<li><a class="dropdown-item" th:href="@{../../proveedor/nuevo}">Agregar
-							Proveedor</a></li>
-				</ul></li>	
+					<li><a class="dropdown-item" th:href="@{../../proveedor/listarTodo}">Lista Proveedor</a></li>
+					<li><a class="dropdown-item" th:href="@{../../proveedor/nuevo}">Agregar Proveedor</a></li>
+				</ul></li>
 				
-			<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item"
-						th:href="@{../../cliente/listarTodo}">Listar Todo</a></li>
-					<li><a class="dropdown-item" th:href="@{../../cliente/nuevo}">Agregar
-							Cliente</a></li>
+					<li><a class="dropdown-item" th:href="@{../../cliente/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../../cliente/nuevo}">Agregar Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" th:href="@{../../login}">Salir</a></li>
 		</ul>
 	</nav>
-
 
 	<a href="../listarTodo">Volver</a>
 	<div align="center">

@@ -22,15 +22,20 @@
 						<li><a class="dropdown-item" th:href="@{../../producto/listarTodo}">Listar Todo</a></li>
 					<li><a class="dropdown-item" th:href="@{../../producto/nuevo}">Agregar Productos</a></li>
 				</ul></li>
+				
 				<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle disabled" href="#"
+				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
+				data-bs-toggle="dropdown" aria-expanded="false"> Reclamos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../../reclamo/listarTodo}">Lista Reclamos</a></li>
+					<li><a class="dropdown-item" th:href="@{../../reclamo/nuevo}">Agregar
+							Reclamos</a></li>
 				</ul></li>
+				
+				
 				<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"

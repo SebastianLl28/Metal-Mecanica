@@ -9,6 +9,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+	<link href="../css/exportar.css" rel="stylesheet" type="text/css" />
 <title>Listar Proveedor</title>
 </head>
 <body>
@@ -24,44 +25,57 @@
 				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-						<li><a class="dropdown-item" th:href="@{../producto/listarTodo}">Listar Todo</a></li>
-					<li><a class="dropdown-item" th:href="@{../producto/nuevo}">Agregar Productos</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../producto/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../producto/nuevo}">Agregar
+							Productos</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle disabled" href="#"
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a>
+				data-bs-toggle="dropdown" aria-expanded="false"> Reclamos </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="#">Listar Todo</a></li>
-					<li><a class="dropdown-item" href="#">Agregar Venta</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../reclamo/listarTodo}">Lista Reclamos</a></li>
+					<li><a class="dropdown-item" th:href="@{../reclamo/nuevo}">Agregar
+							Reclamos</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+				
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" th:href="@{../trabajador/listarTodo}">Lista trabajadores</a></li>
-					<li><a class="dropdown-item" th:href="@{../trabajador/nuevo}">Agregar Trabajador</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../trabajador/listarTodo}">Lista trabajadores</a></li>
+					<li><a class="dropdown-item" th:href="@{../trabajador/nuevo}">Agregar
+							Trabajador</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Proveedor </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" th:href="@{../proveedor/listarTodo}">Lista Proveedor</a></li>
-					<li><a class="dropdown-item" th:href="@{../proveedor/nuevo}">Agregar Proveedor</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../proveedor/listarTodo}">Lista Proveedor</a></li>
+					<li><a class="dropdown-item" th:href="@{../proveedor/nuevo}">Agregar
+							Proveedor</a></li>
 				</ul></li>
-				<li class="nav-item dropdown"><a
+			
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDarkDropdownMenuLink" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
 				<ul class="dropdown-menu dropdown-menu-dark"
 					aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" th:href="@{../cliente/listarTodo}">Listar Todo</a></li>
-					<li><a class="dropdown-item" th:href="@{../cliente/nuevo}">Agregar Cliente</a></li>
+					<li><a class="dropdown-item"
+						th:href="@{../cliente/listarTodo}">Listar Todo</a></li>
+					<li><a class="dropdown-item" th:href="@{../cliente/nuevo}">Agregar
+							Cliente</a></li>
 				</ul></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" th:href="@{../login}">Salir</a></li>
@@ -75,6 +89,11 @@
 		<div class="container">
 			<div class="col-3"></div>
 			<div class="col-sm-9 w-100">
+			
+				<span class="float-start mb-3">Exportar: 
+			<a class="nav-link d-inline" href="/metalmecanica/proveedor/listarTodo?format=pdf" target="_blank"><div class="pdf"></div></a>
+			</span>
+			
 				<table border="1" cellpadding="10"
 					class="table table-striped table-hover table-bordered ">
 					<thead>
@@ -98,7 +117,7 @@
 							<td th:text="${proveedor.ruc}">Correo</td>
 							
 							<td><a th:href="@{/proveedor/actualizar/{id}(id=${proveedor.idProveedor})}">Actualizar</a>
-								<a class = "nav-link d-inline disabled"
+								<a class = "nav-link d-inline text-danger"
 								th:href="@{/proveedor/eliminar/{id}(id=${proveedor.idProveedor})}">Eliminar</a></td>
 						</tr>
 					</tbody>
