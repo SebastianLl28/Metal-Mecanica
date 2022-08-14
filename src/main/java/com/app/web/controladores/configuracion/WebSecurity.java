@@ -23,17 +23,28 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 		.antMatchers("/css/**", "/img/**", "/js/**", "/", "/principal", "/home", "/inicio", "/logeo", "/login","/rest/**","/registro")
 		.permitAll()
-		.antMatchers("/producto/listarTodo").hasAnyRole("ADMIN", "ALMACEN", "VENDEDOR")
+		
 		.antMatchers("/proveedor/listarTodo").hasAnyRole("ADMIN", "ALMACEN", "VENDEDOR")
-		.antMatchers("/proveedor/actualizar/**").hasAnyRole("ADMIN")
-		.antMatchers("/proveedor/nuevo").hasAnyRole("ADMIN")
+		.antMatchers("/proveedor/actualizar/**").hasAnyRole("ADMIN","ALMACEN")
+		.antMatchers("/proveedor/nuevo").hasAnyRole("ADMIN","ALMACEN")
+		.antMatchers("/proveedor/eliminar/**").hasAnyRole("ADMIN","ALMACEN")
+		
+		.antMatchers("/reclamo/listarTodo").hasAnyRole("ADMIN")
+		.antMatchers("/reclamo/nuevo").hasAnyRole("ADMIN","CLIENTE", "ADMIN","ALMACEN")
+		.antMatchers("/reclamo/actualizar/**").hasAnyRole("ADMIN")
+		.antMatchers("/reclamo/eliminar/**").hasAnyRole("ADMIN")
+		
+		
+		.antMatchers("/producto/listarTodo").hasAnyRole("ADMIN", "ALMACEN", "VENDEDOR")
 		.antMatchers("/producto/nuevo").hasAnyRole("ADMIN", "ALMACEN")
 		.antMatchers("/producto/actualizar/**").hasAnyRole("ADMIN", "ALMACEN")
 		.antMatchers("/producto/eliminar/**").hasAnyRole("ADMIN", "ALMACEN")
+		
 		.antMatchers("/trabajador/listarTodo").hasAnyRole("ADMIN", "ALMACEN")
 		.antMatchers("/trabajador/nuevo").hasAnyRole("ADMIN")
 		.antMatchers("/trabajador/actualizar/**").hasAnyRole("ADMIN")
 		.antMatchers("/trabajador/eliminar/**").hasAnyRole("ADMIN")
+		
 		.antMatchers("/cliente/listarTodo").hasAnyRole("ADMIN", "VENDEDOR")
 		.antMatchers("/cliente/nuevo").hasAnyRole("ADMIN", "VENDEDOR")
 		.antMatchers("/cliente/actualizar/**").hasAnyRole("ADMIN", "VENDEDOR")

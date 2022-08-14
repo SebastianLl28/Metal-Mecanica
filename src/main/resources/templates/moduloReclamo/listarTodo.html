@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="ISO-8859-1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<link href="../css/exportar.css" rel="stylesheet" type="text/css" />
+<title>Listar Reclamo</title>
+</head>
+<body>
+
+<!-- 	<nav class="navbar navbar-dark bg-dark flex-row"> -->
+<!-- 		<ul class="navbar-nav flex-row mr-lg-0 mx-5"> -->
+<!-- 			<li><a th:href="@{../bienvenida}" class="navbar-brand" ><b>METAL MECANICA DUEÑAS</b></a></li> -->
+<!-- 		</ul> -->
+<!-- 		<ul class="nav justify-content-end navbar-dark bg-dark mx-5 menu"> -->
+<!-- 			<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle" href="#" -->
+<!-- 				id="navbarDarkDropdownMenuLink" role="button" -->
+<!-- 				data-bs-toggle="dropdown" aria-expanded="false"> Productos </a> -->
+<!-- 				<ul class="dropdown-menu dropdown-menu-dark" -->
+<!-- 					aria-labelledby="navbarDarkDropdownMenuLink"> -->
+<!-- 						<li><a class="dropdown-item" th:href="@{../producto/listarTodo}">Listar Todo</a></li> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../producto/nuevo}">Agregar Productos</a></li> -->
+<!-- 				</ul></li> -->
+<!-- 				<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle disabled" href="#" -->
+<!-- 				id="navbarDarkDropdownMenuLink" role="button" -->
+<!-- 				data-bs-toggle="dropdown" aria-expanded="false"> Venta </a> -->
+<!-- 				<ul class="dropdown-menu dropdown-menu-dark" -->
+<!-- 					aria-labelledby="navbarDarkDropdownMenuLink"> -->
+<!-- 					<li><a class="dropdown-item" href="#">Listar Todo</a></li> -->
+<!-- 					<li><a class="dropdown-item" href="#">Agregar Venta</a></li> -->
+<!-- 				</ul></li> -->
+<!-- 				<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle" href="#" -->
+<!-- 				id="navbarDarkDropdownMenuLink" role="button" -->
+<!-- 				data-bs-toggle="dropdown" aria-expanded="false"> Trabajador </a> -->
+<!-- 				<ul class="dropdown-menu dropdown-menu-dark" -->
+<!-- 					aria-labelledby="navbarDarkDropdownMenuLink"> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../trabajador/listarTodo}">Lista trabajadores</a></li> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../trabajador/nuevo}">Agregar Trabajador</a></li> -->
+<!-- 				</ul></li> -->
+<!-- 				<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle" href="#" -->
+<!-- 				id="navbarDarkDropdownMenuLink" role="button" -->
+<!-- 				data-bs-toggle="dropdown" aria-expanded="false"> Proveedor </a> -->
+<!-- 				<ul class="dropdown-menu dropdown-menu-dark" -->
+<!-- 					aria-labelledby="navbarDarkDropdownMenuLink"> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../proveedor/listarTodo}">Lista Proveedor</a></li> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../proveedor/nuevo}">Agregar Proveedor</a></li> -->
+<!-- 				</ul></li> -->
+<!-- 				<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle" href="#" -->
+<!-- 				id="navbarDarkDropdownMenuLink" role="button" -->
+<!-- 				data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a> -->
+<!-- 				<ul class="dropdown-menu dropdown-menu-dark" -->
+<!-- 					aria-labelledby="navbarDarkDropdownMenuLink"> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../cliente/listarTodo}">Listar Todo</a></li> -->
+<!-- 					<li><a class="dropdown-item" th:href="@{../cliente/nuevo}">Agregar Cliente</a></li> -->
+<!-- 				</ul></li> -->
+<!-- 			<li class="nav-item"><a class="nav-link active" -->
+<!-- 				aria-current="page" th:href="@{../login}">Salir</a></li> -->
+<!-- 		</ul> -->
+<!-- 	</nav> -->
+
+	<div align="center">
+		<h1>Reclamos</h1>
+		<a th:href="@{/reclamo/nuevo}">Crear Nuevo Reclamo</a> <br />
+		 <br />
+		<div class="container">
+			<div class="col-3"></div>
+			<div class="col-sm-9 w-100">
+				
+				<span class="float-start mb-3">Exportar: 
+				<a class="nav-link d-inline" href="/metalmecanica/reclamo/listarTodo?format=pdf" target="_blank"><div class="pdf"></div></a>
+				</span>
+				<table border="1" cellpadding="10"
+					class="table table-striped table-hover table-bordered ">
+					<thead>
+						<tr class = "table-dark">
+							<th>Id</th>
+							<th>Correo</th>
+							<th>Asunto</th>
+							<th>Descripción</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="reclamo: ${listaReclamo}">
+							<td th:text="${reclamo.idReclamo}">Id</td>
+							<td th:text="${reclamo.correo}">correo</td>
+							<td th:text="${reclamo.asunto}">asunto</td>
+							<td th:text="${reclamo.descripcion}">descripcion</td>
+							<td><a th:href="@{/reclamo/actualizar/{id}(id=${reclamo.idReclamo})}">Actualizar</a>
+								<a class = "nav-link d-inline disabled"
+								th:href="@{/reclamo/eliminar/{id}(id=${reclamo.idReclamo})}">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</body>
+</html>
